@@ -1,5 +1,5 @@
 # Galaxy_Classification
-This repository contain 
+
 
 ===========================
 Galaxy Classification Code
