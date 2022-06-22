@@ -13,9 +13,9 @@ import random
 
 
 ### Paths to read the photos
-Image_path = 'DECam_cuts/' ## Cuts.fits from DEeep DECam mosaics 
-jpg_path = 'Legacy_cuts/'  ## Cuts from Legacy 
-png_path = 'RGB_cuts/'    ## Cuts in rgb from photometric catalogue provided by Duho
+Image_path = 'DECam_cuts_sample/' ## Cuts.fits from Deep DECam mosaics 
+jpg_path = 'Legacy_cuts_sample/'  ## Cuts from Legacy 
+png_path = 'RGB_cuts_sample/'    ## Cuts in rgb from photometric catalogue provided by Duho
 
 ### Read the table 
 example_table = pd.read_csv('Abell2670_catalogue_to_classify_final.csv')
@@ -31,11 +31,11 @@ example_table["Comments"] = Class ## Commennts about the classification
 ### A random seed for each classifier 
 random.seed(0) ## Each time that you run the code, always it give you the id list in the same orden
 #id_list = list(range(1,10,1)) ## Testing the first ten objects
-id_list = list(range(1,np.max(id_col)+1,1)) ## We have 'np.max(group_id))+1' objects
+id_list = list(range(1,np.max(id_col)+1,1)) ## We have 'np.max(id_col))+1' objects
 random.shuffle(id_list) ## Here we unsort the list for one seed
 k=0 ## to take the first object of the shuffle list when we start to classify
 
-## The code ask you if you want to start from the begining or if the code stop during your classification, you can start where you stayed
+## The code will ask you if you want to start from the begining or if the code stop during your classification, you can start where you stayed
 print("Type the number of the options:")
 print("1: Are you running for first time? or do you want to classify again?")
 print("2: Continue where you stayed!")
@@ -78,7 +78,7 @@ for i in id_list[k:]:
 	
 	## Now we have to check if there is image for each object in each folder 
 	try: ## Fit g band DECam
-		imlist_g = Image_path+str(i)+'_gband.fits' 
+		imlist_g = Image_path+str(i)+'_gband.fits' ## <<<<<<<<<<<<<<<<- You need to define according how you called your images
 		hdu_list_g = fits.open(imlist_g) ## Open the fits
 		image_data_g = hdu_list_g[0].data # Get the data from the fits
 		image_data_g = np.rot90(image_data_g,3) # Dumb way of making North top in the image
@@ -86,7 +86,7 @@ for i in id_list[k:]:
 		image_data_g = np.zeros([256,256])
 	
 	try: ## Fit r band DECam	
-		imlist_r = Image_path+str(i)+'_rband.fits' 
+		imlist_r = Image_path+str(i)+'_rband.fits' ## <<<<<<<<<<<<<<<<- You need to define according how you called your images
 		hdu_list_r = fits.open(imlist_r) # Open the fits     
 		image_data_r = hdu_list_r[0].data # Get the data from the fits
 		image_data_r = np.rot90(image_data_r,3) # Dumb way of making North top in the image
@@ -94,13 +94,13 @@ for i in id_list[k:]:
 		image_data_r = np.zeros([256,256])
 	
 	try: ## Legacy jpg
-		jpglist = jpg_path+'L'+str(i)+'.jpg' 
+		jpglist = jpg_path+'L'+str(i)+'.jpg' ## <<<<<<<<<<<<<<<<- You need to define according how you called your images
 		Decals_image = Image.open(jpglist) # Call the decals image from a file
 	except(FileNotFoundError, IOError):								
 		Decals_image = np.zeros([256,256])
 		
 	try: ## RGB png
-		pnglist = png_path+str(i)+'_rgb_jar_3.png'
+		pnglist = png_path+str(i)+'_rgb_jar_3.png' ## <<<<<<<<<<<<<<<<- You need to define according how you called your images
 		RGB_image = Image.open(pnglist)
 	except (FileNotFoundError, IOError):
 		RGB_image = np.zeros([256,256])
@@ -208,7 +208,6 @@ for i in id_list[k:]:
 		print("Classification N°", len(example_table['Classification'][example_table['Classification']!='0'])+1)
 		print("ID for this object: ", i)
 		print("Do you see any interaction? Type one of the following options and press <ENTER>")  # User input if the galaxy is a JF
-		#print("If you want comment sth, press <space> and write -> 'j ring galaxy', 'j unwinding', ... etc")
 		print('To comment add a space after the classification and type, e.g. "j ring galaxy"') 
 		print("If you need to zoom, you can type 'i' to Zoom In or 'o' to Zoom Out ")
 		print("'j': jellyfish")
