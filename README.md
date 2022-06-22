@@ -1,9 +1,8 @@
 # Galaxy_Classification
 
 
-===========================
+
 Galaxy Classification Code
-===========================
 		
 This code is used to classify galaxies, visualizing them with cut images
 from Legacy Survey, Deep Mosaic FITS files from DECam in r and g band and available rgb 
@@ -110,10 +109,8 @@ could appear:
      plt.close(fig=None) # Close figure to refresh
  TypeError: close() got an unexpected keyword argument 'fig'
 
-You can comment all the line where it says 'plt.close(fig=None)', 
-they are in the end of the script, and uncooment the other line 
-'plt.close()' since the fig argument is the problem, 
-I don't why but it could be the python3 version
-that you are using.
+You can comment all the line where it says 'plt.close(fig=None)',they are in the end 
+of the script, and uncooment the other line 'plt.close()' since the fig argument 
+is the problem, I don't why but it could be the python3 version that you are using.
 
 
