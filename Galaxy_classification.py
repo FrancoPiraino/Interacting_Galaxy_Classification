@@ -318,7 +318,7 @@ for i in id_list[k:]:
 			#plt.close() ## If you have problems with 'fig' use this line and comment the above line
 
 		plt.close(fig=None) # Close the figure to keep things clean
-		plt.close() ## If you have problems with 'fig' use this line and comment the above line
+		#plt.close() ## If you have problems with 'fig' use this line and comment the above line
 	
 	### Here we save the classification and comments and we updated the new table each time that we classify an object
 	example_table.loc[example_table["ID"] == i, "Classification"] = morph
