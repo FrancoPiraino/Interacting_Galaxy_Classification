@@ -18,7 +18,7 @@ jpg_path = 'Legacy_cuts_sample/'  ## Cuts from Legacy
 png_path = 'RGB_cuts_sample/'    ## Cuts in rgb from photometric catalogue provided by Duho
 
 ### Read the table 
-example_table = pd.read_csv('Abell2670_catalogue_to_classify_final.csv')
+example_table = pd.read_csv('Abell2670_catalogue_testsample.csv')
 
 ### Taking the ID column
 id_col = example_table['ID']  ## Take the ID column
