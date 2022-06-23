@@ -50,7 +50,7 @@ if Q == 2:
 	if true == True:
 		check = input("Your classification is complete. Do you want to start again? ('y':yes, 'n':no): ").lower()
 		if check == 'y':
-			example_table = pd.read_csv('Abell2670_catalogue_testsample.csv')
+			example_table = pd.read_csv('Abell2670_catalogue_test.csv')
 			
 			### Get the objects
 			id_col = example_table['ID']  ## Take the ID column
