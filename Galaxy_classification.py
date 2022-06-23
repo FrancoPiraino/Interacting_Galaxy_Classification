@@ -76,7 +76,7 @@ for i in id_list[k:]:
 	Decals_image = np.zeros([256,256])
 	RGB_image = np.zeros([256,256])
 	
-	## Now we have to check if there is image for each object in each folder 
+	## Now we have to check if there is image for each object in each folder and we call them
 	try: ## Fit g band DECam
 		imlist_g = Image_path+str(i)+'_gband.fits' ## <<<<<<<<<<<<<<<<- You need to define according how you called your images
 		hdu_list_g = fits.open(imlist_g) ## Open the fits

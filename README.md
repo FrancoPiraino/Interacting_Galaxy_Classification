@@ -1,26 +1,41 @@
-# Galaxy_Classification
+
+
+# Interacting_Galaxy_Classification
 
 
 
 Galaxy Classification Code
 		
-This code is used to classify galaxies, visualizing them with cut images
-from Legacy Survey, Deep Mosaic FITS files from DECam in r and g band and available rgb 
-images from a photometric catalogue.
+This code is used to classify galaxies and check if they have some interaction,
+through the visualization of cut images from Legacy Survey, Deep Mosaic FITS files
+from DECam in r and g band and available rgb images from a photometric catalogue.
 
-To run the code you need a table with the ID of each object and three folders 
+To run the code you need a csv table with a column for the ID of each object and three folders 
 which contain the cuts to classify them
 
 The folders that you should have are:
 	
-	``Legacy_cuts``: Here we should have the complete catalogue of
-			images from Legacy Survey
+	``Legacy_cuts``: Here we should have a catalogue of images from Legacy Survey
 	``DECam_cuts`` : Here we should have some cutout fits from Deep Mosaic FITS DECam 
-			in two bands (r,g). 
+	                 in two bands (r,g). 
 	``RGB_cuts``   : Here we should have rgb images from the photometric
-			catalogue.
+			  catalogue.
+			
+The code is edited to read the images from those folders such that the name of the cuts 
+should contain the ID value. You decide how you call your files but in this case, they are 
+called in the following way:
+
+``Legacy_cuts`` --> ``L+ID+.jpg``
+``DECam_cuts`` --> ``ID+_rband.fits``
+``Legacy_cuts`` --> ``ID+_gband.fits``
+``RGB_cuts`` --> ``ID+_rgb_jar_3.png`` 
+
+So, into the code, you need to define how you call from the folders.
+In this repository we only have a small sample to test the code.
 	
 The code is written in python3, so maybe you should run it using ``python3 Galaxy_classification.py``
+
+The code has a seed defined to classify in a random way.
 
 Then, it will ask us if we want to start from the beginning or if we want to start where
  we stayed, in the case of the code stopping or failing during our classification:
@@ -100,8 +115,7 @@ a table will be created ``class_results.csv`` with two new columns called:
 Each time that you save a classification, this table will be updated.
 
 OBSERVATION:
-Just in case when you start to run the code, the nexte error
-could appear:
+Just in case when you start to run the code, the next error could happen:
 
 ..
  Traceback (most recent call last):
@@ -110,7 +124,8 @@ could appear:
  TypeError: close() got an unexpected keyword argument 'fig'
 
 You can comment all the line where it says 'plt.close(fig=None)',they are in the end 
-of the script, and uncooment the other line 'plt.close()' since the fig argument 
-is the problem, I don't why but it could be the python3 version that you are using.
+of the script, and uncomment the other line 'plt.close()' since the fig argument 
+is the problem, I don't why this happen but it could be the python3 version 
+that you are using.
 
 
