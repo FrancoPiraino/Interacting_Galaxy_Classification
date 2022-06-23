@@ -11,7 +11,8 @@ from PIL import Image
 import pandas as pd
 import random
 
-
+### A random seed for each classifier 
+random.seed(0) ## Each time that you run the code, always it give you the id list in the same orden
 
 ### Paths to read the photos
 Image_path = 'DECam_cuts/' ## Cuts.fits from Deep DECam mosaics 
@@ -29,12 +30,10 @@ Class = np.array(['0']*len(id_col)) ## I create an array with zeros to save the 
 example_table['Classification'] = Class ## Info of classification
 example_table["Comments"] = Class ## Commennts about the classification
 
-### A random seed for each classifier 
-random.seed(0) ## Each time that you run the code, always it give you the id list in the same orden
+### We shuffle the list using the seed
 id_list = id_col.tolist()
 random.shuffle(id_list) ## Here we unsort the list for one seed
 k=0 ## to take the first object of the shuffle list when we start to classify
-
 
 ## The code will ask you if you want to start from the begining or if the code stop during your classification, you can start where you stayed
 print("Type the number of the options:")
