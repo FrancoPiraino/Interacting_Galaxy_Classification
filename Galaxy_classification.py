@@ -11,9 +11,10 @@ from PIL import Image
 import pandas as pd
 import random
 
+### I AM EDITING
 
 ### Paths to read the photos
-Image_path = 'DECam_cuts' ## Cuts.fits from Deep DECam mosaics 
+Image_path = 'DECam_cuts/' ## Cuts.fits from Deep DECam mosaics 
 jpg_path = 'Legacy_cuts/'  ## Cuts from Legacy 
 png_path = 'RGB_cuts/'    ## Cuts in rgb from photometric catalogue provided by Duho
 
