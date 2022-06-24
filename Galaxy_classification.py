@@ -12,7 +12,7 @@ import pandas as pd
 import random
 
 ### A random seed for each classifier 
-#random.seed(0) ## Each time that you run the code, always it give you the id list in the same orden
+random.seed(100) ## Each time that you run the code, always it give you the id list in the same orden
 
 ### Paths to read the photos
 Image_path = 'DECam_cuts/' ## Cuts.fits from Deep DECam mosaics 
