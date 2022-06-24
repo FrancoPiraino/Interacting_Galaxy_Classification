@@ -204,12 +204,12 @@ for i in id_list[k:]:
 		plt.ion() # Ensure in interactive mode
        	
        	### Interactive mode with the user to start the classification
-		print('---------------------------------------------------------------')	
-		print("Classification N°", len(example_table['Classification'][example_table['Classification']!='0'])+1)
-		print("ID for this object: ", i)
-		print("Do you see any interaction? Type one of the following options and press <ENTER>")  # User input if the galaxy is a JF
-		print('To comment add a space after the classification and type, e.g. "j ring galaxy"') 
-		print("If you need to zoom, you can type 'i' to Zoom In or 'o' to Zoom Out ")
+		print('---------------------------------------------------------------')
+		Nclass = len(example_table['Classification'][example_table['Classification']!='0'])+1	
+		print("Classification N°", Nclass,"// Galaxy ID:",i)
+		print("Do you see any interaction? Type one of the options below and press <ENTER>")  # User input if the galaxy is a JF
+		print('[To comment add a space after the classification and type, e.g. "j ring galaxy"]') 
+		print("[If you need to zoom, you can type 'i' to Zoom In or 'o' to Zoom Out] ")
 		print("'j': jellyfish")
 		print("'m': merger")
 		print("'pm': post merger")
