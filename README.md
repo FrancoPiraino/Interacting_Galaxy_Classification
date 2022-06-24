@@ -35,7 +35,7 @@ In this repository we only have a small sample to test the code.
 	
 The code is written in python3, so maybe you should run it using ``python3 Galaxy_classification.py``
 
-The code has a seed defined to classify in a random way.
+The code has the option to put a seed to classify in a random way.
 
 Then, it will ask us if we want to start from the beginning or if we want to start where
  we stayed, in the case of the code stopping or failing during our classification:
