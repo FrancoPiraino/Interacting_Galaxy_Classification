@@ -4,7 +4,7 @@
 
 
 
-##################################################### Galaxy Classification Code ##########################################################################
+########################### Galaxy Classification Code #############################
 		
 This code is used to classify galaxies and check if they have some interaction,
 through the visualization of cut images from Legacy Survey, Deep Mosaic FITS files
@@ -129,13 +129,25 @@ is the problem, I don't why this happen but it could be the python3 version
 that you are using.
 
 
-##################################################### Final Classifcation v3 Code ######################################################################
+################### Final Classifcation v3 Code ##########################
 
 This code was created to assign a final class for each galaxy 
 
 Its structure is based in the flowchart attached in this repository
 
-The code will need the table results of each classifier to work
+The code will need the table with the classification for each galaxy
+of each classifier that run the code to classify.
+
+
+#################### Plot for results code ###############################
+
+Here we can obtain some results from the final classifications as:
+
+Histogram of confidence for each group and each classification,
+Histogram of the final confidences and a plot of the ra vs dec plane 
+to see each interacting galaxy distributed in the sky
+
+
 
 
 
