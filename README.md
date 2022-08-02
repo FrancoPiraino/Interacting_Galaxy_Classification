@@ -4,7 +4,7 @@
 
 
 
-Galaxy Classification Code
+##################################################### Galaxy Classification Code ##########################################################################
 		
 This code is used to classify galaxies and check if they have some interaction,
 through the visualization of cut images from Legacy Survey, Deep Mosaic FITS files
@@ -127,5 +127,19 @@ You can comment all the line where it says 'plt.close(fig=None)',they are in the
 of the script, and uncomment the other line 'plt.close()' since the fig argument 
 is the problem, I don't why this happen but it could be the python3 version 
 that you are using.
+
+
+##################################################### Final Classifcation v3 Code ######################################################################
+
+This code was created to assign a final class for each galaxy 
+
+Its structure is based in the flowchart attached in this repository
+
+The code will need the table results of each classifier to work
+
+
+
+
+
 
 
