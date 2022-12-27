@@ -27,7 +27,7 @@ called in the following way:
 
 ``Legacy_cuts`` --> ``L+ID+.jpg``
 ``DECam_cuts`` --> ``ID+_rband.fits``
-``Legacy_cuts`` --> ``ID+_gband.fits``
+``DECam_cuts`` --> ``ID+_gband.fits``
 ``RGB_cuts`` --> ``ID+_rgb_jar_3.png`` 
 
 So, into the code, you need to define how you call from the folders.
